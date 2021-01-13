@@ -32,10 +32,8 @@ const BottomRightHandle = () => (
 storiesOf('handle', module).add('bottomRight', () => (
   <Resizable
     style={style}
-    defaultSize={{
-      width: 500,
-      height: 200,
-    }}
+    defaultWidth={500}
+    defaultHeight={200}
     handleComponent={{
       bottomRight: <BottomRightHandle />,
     }}

@@ -3,8 +3,9 @@
 import babel from 'rollup-plugin-babel';
 import cjs from 'rollup-plugin-commonjs';
 import globals from 'rollup-plugin-node-globals';
-import replace from 'rollup-plugin-replace';
 import resolve from 'rollup-plugin-node-resolve';
+import postcss from 'rollup-plugin-postcss';
+import replace from 'rollup-plugin-replace';
 
 export default {
   dest: 'build/index.js',
@@ -33,6 +34,9 @@ export default {
       ],
     }),
     globals(),
+    postcss({
+      plugins: ['.css'],
+    }),
     replace({ 'process.env.NODE_ENV': JSON.stringify('development') }),
     resolve({
       browser: true,

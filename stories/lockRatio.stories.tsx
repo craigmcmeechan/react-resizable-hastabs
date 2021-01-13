@@ -42,14 +42,17 @@ const sidebar = {
 
 const aspectRatio = 16 / 9;
 
-storiesOf('extra', module)
-  .add('header', () => (
+storiesOf('lockRatio', module)
+  .add('lockRatio', () => (
+    <Resizable style={style} defaultWidth={400} defaultHeight={200} lockAspectRatio={true}>
+      <div style={content}>001</div>
+    </Resizable>
+  ))
+  .add('extraHeight', () => (
     <Resizable
       style={style}
-      defaultSize={{
-        width: 400,
-        height: 400 / aspectRatio + 50,
-      }}
+      defaultWidth={400}
+      defaultHeight={400 / aspectRatio + 50}
       lockAspectRatio={aspectRatio}
       lockAspectRatioExtraHeight={50}
     >
@@ -60,10 +63,8 @@ storiesOf('extra', module)
   .add('sidebar', () => (
     <Resizable
       style={style}
-      defaultSize={{
-        width: 400 + 50,
-        height: 400 / aspectRatio + 50,
-      }}
+      defaultWidth={400}
+      defaultHeight={400 / aspectRatio + 50}
       lockAspectRatio={aspectRatio}
       lockAspectRatioExtraHeight={50}
       lockAspectRatioExtraWidth={50}
