@@ -4,6 +4,8 @@ A resizable component improved from  [re-resizable](https://github.com/bokuweb/r
 
 Home page https://github.com/HaoxiangShen/react-quick-resizable
 
+English | [简体中文](https://github.com/HaoxiangShen/react-quick-resizable/blob/master/README_zh.md).
+
 ## Background
 
 **Important:React Quick Resizable is not built from scratch, but improved from re-resizable**

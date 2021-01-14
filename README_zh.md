@@ -4,6 +4,8 @@
 
 主页 https://github.com/HaoxiangShen/react-quick-resizable
 
+[English](https://github.com/HaoxiangShen/react-quick-resizable/blob/master/README.md) | 简体中文.
+
 ## 背景
 
 **重要:React Quick Resizable 不是从零开始构建的, 它从re-resizable改进而来**
