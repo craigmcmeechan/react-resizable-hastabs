@@ -9,7 +9,7 @@ Home page https://github.com/HaoxiangShen/react-quick-resizable
 **Important:React Quick Resizable is not built from scratch, but improved from re-resizable**
 
 Here are the key improvements compare to the original re-resizable:
-- Perform better there are many child component.
+- Perform better when there are many child component.
 - Added disabled property.
 - Added preview property.
 
