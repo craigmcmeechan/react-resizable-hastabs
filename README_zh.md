@@ -15,7 +15,11 @@
 - 增加了禁用属性.
 - 增加了预览属性.
 
-## Props
+## Demo
+
+[Storybook](https://haoxiangshen.github.io/)
+
+## 属性
 
 #### `defaultWidth?: number | string;`
 

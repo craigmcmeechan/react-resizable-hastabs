@@ -15,6 +15,10 @@ Here are the key improvements compare to the original re-resizable:
 - Added disabled property.
 - Added preview property.
 
+## Demo
+
+[Storybook](https://haoxiangshen.github.io/)
+
 ## Props
 
 #### `defaultWidth?: number | string;`
