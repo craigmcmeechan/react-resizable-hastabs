@@ -1,3 +1,4 @@
+import postcss from 'rollup-plugin-postcss';
 import replace from 'rollup-plugin-replace';
 import typescript from 'rollup-plugin-typescript2';
 
@@ -9,15 +10,16 @@ export default {
       exclude: ['stories'],
     }),
     replace({ 'process.env.NODE_ENV': JSON.stringify('production') }),
+    postcss(),
   ],
   output: {
     sourcemap: true,
     exports: 'named',
-    name: 're-resizable',
+    name: 'react-quick-resizable',
     globals: {
       react: 'React',
-      memoize: 'fast-memoize'
+      memoize: 'fast-memoize',
     },
   },
-  external: ['react', 'fast-memoize'],
+  external: ['react', 'fast-memoize', 'rxjs'],
 };

@@ -18,7 +18,7 @@ Here are the key improvements compare to the original re-resizable:
 #### `defaultWidth?: number | string;`
 
 Specifies the `width` that the dragged item should start at.
-For example, you can set `300`, `'300px'`, `50%`.
+For example, you can set `300`, `'300px'`, `50%`, `50vw`.
 If both `defaultWidth` and `width` omitted, set `'auto'`.
 
 `defaultWidth` will be ignored when `width` set.
@@ -26,14 +26,14 @@ If both `defaultWidth` and `width` omitted, set `'auto'`.
 #### `width: number | string`
 
 The `width` property is used to set the width of the component.
-For example, you can set `300`, `'300px'`, `50%`.
+For example, you can set `300`, `'300px'`, `50%`, `50vw`.
 
 Use `width` if you need to control width state by yourself.
 
 #### `defaultHeight?: number | string;`
 
 Specifies the `height` that the dragged item should start at.
-For example, you can set `300`, `'300px'`, `50%`.
+For example, you can set `300`, `'300px'`, `50%`, `50vh`.
 If both `defaultHeight` and `height` omitted, set `'auto'`.
 
 `defaultHeight` will be ignored when `height` set.
@@ -41,7 +41,7 @@ If both `defaultHeight` and `height` omitted, set `'auto'`.
 #### `height: number | string`
 
 The `height` property is used to set the height of the component.
-For example, you can set `300`, `'300px'`, `50%`.
+For example, you can set `300`, `'300px'`, `50%`, `50vh`.
 
 Use `height` if you need to control width state by yourself.
 

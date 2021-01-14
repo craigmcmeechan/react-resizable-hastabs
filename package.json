@@ -1,8 +1,8 @@
 {
-  "name": "re-resizable",
-  "version": "6.8.0",
+  "name": "react-quick-resizable",
+  "version": "1.0.0",
   "description": "Resizable component for React.",
-  "title": "re-resizable",
+  "title": "react-quick-resizable",
   "main": "./lib/index.es5.js",
   "module": "./lib/index.js",
   "jsnext:main": "./lib/index.js",
@@ -30,14 +30,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/bokuweb/react-resizable-box.git"
+    "url": "https://github.com/HaoxiangShen/react-quick-resizable"
   },
-  "author": "bokuweb",
+  "author": "HaoxiangShen",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/bokuweb/react-resizable-box/issues"
+    "url": "https://github.com/HaoxiangShen/react-quick-resizable/issues"
   },
-  "homepage": "https://github.com/bokuweb/react-resizable-box",
+  "homepage": "https://github.com/HaoxiangShen/react-quick-resizable",
   "devDependencies": {
     "@babel/cli": "7.11.6",
     "@babel/core": "7.11.6",
@@ -51,6 +51,7 @@
     "@storybook/addon-info": "5.3.21",
     "@storybook/addon-options": "5.3.21",
     "@storybook/react": "6.0.28",
+    "@types/classnames": "^2.2.11",
     "@types/node": "12.12.70",
     "@types/react": "16.8.7",
     "@types/react-dom": "16.9.9",
@@ -69,6 +70,7 @@
     "babel-preset-flow": "6.23.0",
     "babel-preset-react": "6.24.1",
     "babel-register": "6.26.0",
+    "classnames": "^2.2.6",
     "cross-env": "7.0.3",
     "gh-pages": "3.1.0",
     "less": "^4.1.0",
@@ -105,8 +107,6 @@
     "fixture": "./test/fixture.html"
   },
   "dependencies": {
-    "@types/classnames": "^2.2.11",
-    "classnames": "^2.2.6",
     "fast-memoize": "^2.5.1",
     "rxjs": "^6.6.3"
   },
