@@ -114,20 +114,9 @@ For example: enable `boundsByDirection` when resizable component stick on right 
 
 `false` by default.
 
-#### `handleStyles?: HandleStyles;`
-
-The `handleStyles` property is used to override the style of one or more resize handles.
-Only the axis you specify will have its handle style replaced.
-If you specify a value for `right` it will completely replace the styles for the `right` resize handle,
-but other handle will still use the default styles.
-
 #### `handleComponent?: HandleComponent;`
 
 The `handleComponent` property is used to pass a React Component to be rendered as one or more resize handle. For example, this could be used to use an arrow icon as a handle..
-
-#### `handleWrapperClass?: string;`
-
-The `handleWrapperClass` property is used to override the className of resize handles wrapper.
 
 #### `directions?: Directions;`
 
