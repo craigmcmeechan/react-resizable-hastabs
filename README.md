@@ -61,7 +61,7 @@ The `style` property is used to set the custom `style` of a resizable component.
 
 #### `minWidth?: number | string;`
 
-The `minWidth` property is used to set the minimum width of a resizable component. Defaults to 10px.
+The `minWidth` property is used to set the minimum width of a resizable component. Defaults to 0.
 
 It accepts viewport as well as parent relative units. For example, you can set `300`, `50%`, `50vw` or `50vh`.
 
@@ -69,7 +69,7 @@ Same type of values can be applied to `minHeight`, `maxWidth` and `maxHeight`.
 
 #### `minHeight?: number | string;`
 
-The `minHeight` property is used to set the minimum height of a resizable component. Defaults to 10px.
+The `minHeight` property is used to set the minimum height of a resizable component. Defaults to 0.
 
 #### `maxWidth?: number | string;`
 

@@ -60,13 +60,13 @@
 
 #### `minWidth?: number | string;`
 
-最小宽度. 默认值 10px.
+最小宽度. 默认值 0.
 
 可以设置为 `300`, `300px`, `50%`, `50vw`.
 
 #### `minHeight?: number | string;`
 
-最小高度.
+最小高度. 默认值 0.
 
 #### `maxWidth?: number | string;`
 
