@@ -1,6 +1,6 @@
 {
   "name": "react-quick-resizable",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Resizable component for React.",
   "title": "react-quick-resizable",
   "main": "./lib/index.es5.js",
