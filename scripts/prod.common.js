@@ -1,4 +1,4 @@
-import postcss from 'rollup-plugin-postcss';
+import css from 'rollup-plugin-css-only';
 import replace from 'rollup-plugin-replace';
 import typescript from 'rollup-plugin-typescript2';
 
@@ -10,7 +10,7 @@ export default {
       exclude: ['stories'],
     }),
     replace({ 'process.env.NODE_ENV': JSON.stringify('production') }),
-    postcss(),
+    css({ output: 'index.css' }),
   ],
   output: {
     sourcemap: true,

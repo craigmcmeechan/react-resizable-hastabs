@@ -30,7 +30,7 @@ storiesOf('aspect', module).add('disabled', () => (
 storiesOf('aspect', module).add('flex', () => (
   <>
     <div style={{ display: 'flex', height: 400 }}>
-      <Resizable style={style} defaultWidth={200} directions={{ right: true }}>
+      <Resizable style={style} defaultWidth={200} maxWidth="80%" directions={{ right: true }}>
         001
       </Resizable>
       <div style={{ ...style, flex: 1 }}>002</div>
@@ -41,7 +41,7 @@ storiesOf('aspect', module).add('flex', () => (
 storiesOf('aspect', module).add('flexColumn', () => (
   <>
     <div style={{ display: 'flex', flexDirection: 'column', height: 600 }}>
-      <Resizable style={style} defaultHeight={200} directions={{ bottom: true }}>
+      <Resizable style={style} defaultHeight={200} maxHeight="80%" directions={{ bottom: true }}>
         001
       </Resizable>
       <div style={{ ...style, flex: 1 }}>002</div>

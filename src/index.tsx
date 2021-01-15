@@ -139,6 +139,7 @@ export class Resizable extends React.PureComponent<ResizeProps, ResizeState> {
   sizeCache: { width: string | number; height: string | number } | undefined;
 
   ratio = 1;
+  flexDir?: 'row' | 'column';
   parentWidth = 0;
   parentHeight = 0;
 
@@ -199,6 +200,8 @@ export class Resizable extends React.PureComponent<ResizeProps, ResizeState> {
     preview: false,
     scale: 1,
     resizeRatio: 1,
+    minWidth: 0,
+    minHeight: 0,
   };
 
   constructor(props: ResizeProps) {
@@ -376,7 +379,7 @@ export class Resizable extends React.PureComponent<ResizeProps, ResizeState> {
                   this.previewResize(widthNum, heightNum);
                 } else if (!this.props.preview) {
                   const { onResize } = this.props;
-                  this.setState({ width, height });
+                  this.setSizeByDirection({ direction, width, height });
                   if (onResize) {
                     onResize({
                       width,
@@ -392,6 +395,22 @@ export class Resizable extends React.PureComponent<ResizeProps, ResizeState> {
       )
       .pipe(takeUntil(this.destroyed$))
       .subscribe();
+  }
+
+  setSizeByDirection(
+    { direction, width, height }: { direction: Direction; width: number | string; height: number | string },
+    callback?: () => void,
+  ) {
+    const newState: any = {};
+    if (hasDirection('left', direction) || hasDirection('right', direction)) {
+      newState.width = width;
+    }
+    if (hasDirection('top', direction) || hasDirection('bottom', direction)) {
+      newState.height = height;
+    }
+    this.setState({ ...newState }, () => {
+      callback && callback();
+    });
   }
 
   previewResize(width: number, height: number) {
@@ -473,9 +492,9 @@ export class Resizable extends React.PureComponent<ResizeProps, ResizeState> {
     min: { width?: number; height?: number },
   ) {
     const { lockAspectRatio, lockAspectRatioExtraHeight, lockAspectRatioExtraWidth } = this.props;
-    const computedMinWidth = typeof min.width === 'undefined' ? 10 : min.width;
+    const computedMinWidth = typeof min.width === 'undefined' ? 0 : min.width;
     const computedMaxWidth = typeof max.width === 'undefined' || max.width < 0 ? newWidth : max.width;
-    const computedMinHeight = typeof min.height === 'undefined' ? 10 : min.height;
+    const computedMinHeight = typeof min.height === 'undefined' ? 0 : min.height;
     const computedMaxHeight = typeof max.height === 'undefined' || max.height < 0 ? newHeight : max.height;
     const extraHeight = lockAspectRatioExtraHeight || 0;
     const extraWidth = lockAspectRatioExtraWidth || 0;
@@ -590,6 +609,11 @@ export class Resizable extends React.PureComponent<ResizeProps, ResizeState> {
     let parentSize = this.getParentSize();
     this.parentWidth = parentSize.width;
     this.parentHeight = parentSize.height;
+    const parent = this.parentNode;
+    if (parent) {
+      const dir = this.window!.getComputedStyle(parent).flexDirection;
+      this.flexDir = dir.startsWith('row') ? 'row' : 'column';
+    }
   };
 
   endResize = (e: Event, direction: Direction) => {
@@ -607,7 +631,7 @@ export class Resizable extends React.PureComponent<ResizeProps, ResizeState> {
     this.setState({ isResizing: false });
     document.body.style.cursor = this.bakCusor!;
     if (this.sizeCache) {
-      this.setState({ ...this.sizeCache }, () => {
+      this.setSizeByDirection({ ...this.sizeCache, direction }, () => {
         this.sizeCache = undefined;
         callback();
       });
@@ -693,6 +717,9 @@ export class Resizable extends React.PureComponent<ResizeProps, ResizeState> {
       width: this.props.width || this.state.width,
       height: this.props.height || this.state.height,
     };
+    if (this.flexDir) {
+      style.flexBasis = this.flexDir === 'row' ? style.width : style.height;
+    }
 
     return (
       <div {...extendsProps} ref={this.ref} style={style} className={this.props.className}>
