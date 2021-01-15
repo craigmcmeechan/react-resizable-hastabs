@@ -183,7 +183,7 @@ export class Resizable extends React.PureComponent<ResizeProps, ResizeState> {
     onResize: () => {},
     onResizeEnd: () => {},
     bounds: 'parent',
-    boundsByDirection: true,
+    boundsByDirection: false,
     directions: {
       top: true,
       right: true,

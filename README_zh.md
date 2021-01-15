@@ -60,13 +60,13 @@
 
 #### `minWidth?: number | string;`
 
-最小宽度. 默认值 10px.
+最小宽度. 默认值 0.
 
 可以设置为 `300`, `300px`, `50%`, `50vw`.
 
 #### `minHeight?: number | string;`
 
-最小高度.
+最小高度. 默认值 0.
 
 #### `maxWidth?: number | string;`
 
@@ -102,10 +102,7 @@
 
 #### `boundsByDirection?: boolean;`
 
-By default max dimensions based on left and top element position.
-Width grow to right side, height grow to bottom side.
-Set `true` for detect max dimensions by direction.
-For example: enable `boundsByDirection` when resizable component stick on right side of screen and you want resize by left handler;
+默认情况下，基于左侧和顶部元素位置的最大尺寸。宽度向右侧增长，高度向底部增长。将`boundsByDirection`设置为`true`。例如：当可调整大小的组件粘贴在屏幕的右侧，并且您希望按左侧处理程序调整大小时，启用boundsByDirection；
 
 `false` by default.
 
