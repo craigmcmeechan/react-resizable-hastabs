@@ -1,14 +1,14 @@
-# React Quick Resizable
+# React Quick Resizable component updated to Have Tabs and React Scrollbar component
+
 
 A resizable component improved from  [re-resizable](https://github.com/bokuweb/re-resizable).
-
-Home page https://github.com/HaoxiangShen/react-quick-resizable
-
-English | [简体中文](https://github.com/HaoxiangShen/react-quick-resizable/blob/master/README_zh.md).
+Forked and updated from https://github.com/HaoxiangShen/react-quick-resizable
+Additional options added https://github.com/craigmcmeechan/react-resizable-hastabs/
 
 ## Background
 
 **Important:React Quick Resizable is not built from scratch, but improved from re-resizable**
+**This is component now features additional modification to the work down by fork by HaoxiangShen
 
 Here are the key improvements compare to the original re-resizable:
 - Perform better when there are many child component.
